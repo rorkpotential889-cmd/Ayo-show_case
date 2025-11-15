@@ -11,7 +11,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="space-y-4">
         <h1 className="text-5xl font-bold tracking-tight sm:text-6xl">
-          Hi, I'm <span className="text-primary">Prince Lallazy</span>
+          Hi, I&apos;m <span className="text-primary">Prince Lallazy</span>
         </h1>
         <p className="text-xl text-muted-foreground max-w-2xl">
           A developer passionate about building modern web applications with clean code and great
@@ -31,9 +31,9 @@ export default function Home() {
       <section className="space-y-4">
         <h2 className="text-3xl font-bold">About Me</h2>
         <p className="text-muted-foreground max-w-prose leading-7">
-          I'm a developer who loves creating digital experiences. I focus on building scalable,
-          performant applications using modern technologies. When I'm not coding, you can find me
-          exploring new technologies and contributing to open-source projects.
+          I&apos;m a developer who loves creating digital experiences. I focus on building scalable,
+          performant applications using modern technologies. When I&apos;m not coding, you can find
+          me exploring new technologies and contributing to open-source projects.
         </p>
         <Link href="/about">
           <Button variant="ghost">Learn More →</Button>

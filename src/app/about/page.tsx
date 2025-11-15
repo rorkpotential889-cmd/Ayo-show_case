@@ -38,16 +38,18 @@ export default function AboutPage() {
         <h1 className="text-4xl font-bold">About Me</h1>
         <div className="space-y-4 text-muted-foreground max-w-prose leading-7">
           <p>
-            I'm a passionate developer with a focus on creating elegant, efficient, and user-friendly
-            applications. I love turning complex problems into simple, beautiful solutions.
+            I&apos;m a passionate developer with a focus on creating elegant, efficient, and
+            user-friendly applications. I love turning complex problems into simple, beautiful
+            solutions.
           </p>
           <p>
             My journey in web development started with a curiosity about how websites work, and it
             has evolved into a career where I get to build products that make a difference.
           </p>
           <p>
-            When I'm not coding, I enjoy staying updated with the latest technologies, contributing
-            to open-source projects, and sharing knowledge with the developer community.
+            When I&apos;m not coding, I enjoy staying updated with the latest technologies,
+            contributing to open-source projects, and sharing knowledge with the developer
+            community.
           </p>
         </div>
       </section>
@@ -81,4 +83,3 @@ export default function AboutPage() {
     </div>
   );
 }
-

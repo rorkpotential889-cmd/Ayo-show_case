@@ -6,4 +6,3 @@ export function Section({ title, children }: { title: string; children: React.Re
     </section>
   );
 }
-

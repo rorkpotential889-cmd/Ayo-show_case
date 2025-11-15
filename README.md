@@ -4,17 +4,17 @@ A Next.js 14 + TypeScript + Tailwind CSS portfolio.
 
 ### Scripts
 
-- dev: `npx next dev`
-- build: `npx next build`
-- start: `npx next start`
-- lint: `npx next lint`
-- format: `npx prettier --write .`
+- dev: `pnpm dev`
+- build: `pnpm build`
+- start: `pnpm start`
+- lint: `pnpm lint`
+- format: `pnpm format`
 
 ### Getting started
 
-1. Install Node 18+.
-2. Install dependencies (PowerShell): `npm.cmd install`
-3. Start dev server: `npx next dev`
+1. Install Node 18+ and pnpm: `npm install -g pnpm`
+2. Install dependencies: `pnpm install`
+3. Start dev server: `pnpm dev`
 4. Open `http://localhost:3000`.
 
 ### Structure
@@ -27,5 +27,3 @@ A Next.js 14 + TypeScript + Tailwind CSS portfolio.
 ### Deploy
 
 - Recommended: Vercel. Import the repo, framework: Next.js, then Deploy.
-
-

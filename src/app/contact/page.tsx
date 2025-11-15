@@ -35,8 +35,8 @@ export default function ContactPage() {
       <section className="space-y-4">
         <h1 className="text-4xl font-bold">Get In Touch</h1>
         <p className="text-xl text-muted-foreground max-w-prose">
-          I'm always open to discussing new projects, creative ideas, or opportunities to be part of
-          your visions.
+          I&apos;m always open to discussing new projects, creative ideas, or opportunities to be
+          part of your visions.
         </p>
       </section>
 
@@ -107,4 +107,3 @@ export default function ContactPage() {
     </div>
   );
 }
-
