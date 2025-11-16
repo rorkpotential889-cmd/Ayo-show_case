@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" class="w-full h-full">
+  <defs>
+    <linearGradient id="playlistGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ee5a6f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c44569;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="500" height="500" rx="12" fill="url(#playlistGrad)"/>
+  
+  <rect x="50" y="50" width="400" height="400" rx="8" fill="rgba(0,0,0,0.3)"/>
+  
+  <text x="250" y="200" font-family="Arial Black" font-size="48" font-weight="900" fill="white" text-anchor="middle">HEAVY</text>
+  <text x="250" y="260" font-family="Arial Black" font-size="48" font-weight="900" fill="white" text-anchor="middle">ROCK</text>
+  
+  <line x1="150" y1="300" x2="350" y2="300" stroke="white" stroke-width="4"/>
+  
+  <text x="250" y="340" font-family="Arial" font-size="24" fill="white" text-anchor="middle" opacity="0.9">METAL PLAYLIST</text>
+  
+  <circle cx="200" cy="400" r="30" fill="white" opacity="0.2"/>
+  <circle cx="250" cy="400" r="30" fill="white" opacity="0.2"/>
+  <circle cx="300" cy="400" r="30" fill="white" opacity="0.2"/>
+  
+  <rect x="100" y="420" width="300" height="4" rx="2" fill="white" opacity="0.5"/>
+</svg>
+

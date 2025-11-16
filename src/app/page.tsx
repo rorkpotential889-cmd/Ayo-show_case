@@ -1,60 +1,144 @@
+'use client';
+
+import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { Hero } from '../components/Hero';
+import { ServiceCard } from '../components/ServiceCard';
 import { Button } from '../components/ui/Button';
 import { Card, CardDescription, CardTitle } from '../components/ui/Card';
 import { projects } from '../content/projects';
 
+const featuredServices = [
+  {
+    title: 'AI Development',
+    description: 'Build AI-powered applications with modern tools',
+    tools: ['Rork Lovable', 'Cursor', 'V0', 'FlutterFlow'],
+    mockupType: 'dashboard' as const,
+    mockupAlt: 'AI App Dashboard',
+  },
+  {
+    title: 'Automation',
+    description: 'Streamline workflows with powerful integrations',
+    tools: ['Zoho', 'GoHighLevel', 'WordPress'],
+    mockupType: 'workflow' as const,
+    mockupAlt: 'Automation Flow',
+  },
+  {
+    title: 'Web Design',
+    description: 'Create beautiful, responsive websites',
+    tools: ['WordPress', 'Wix', 'Next.js'],
+    mockupType: 'desktop' as const,
+    mockupAlt: 'Website Design',
+  },
+];
+
 export default function Home() {
-  const featuredProjects = projects.slice(0, 2);
+  const featuredProjects = projects.filter((p) => p.featured).slice(0, 3);
 
   return (
-    <div className="space-y-16">
-      {/* Hero Section */}
-      <section className="space-y-4">
-        <h1 className="text-5xl font-bold tracking-tight sm:text-6xl">
-          Hi, I&apos;m <span className="text-primary">Prince Lallazy</span>
-        </h1>
-        <p className="text-xl text-muted-foreground max-w-2xl">
-          A developer passionate about building modern web applications with clean code and great
-          user experiences.
-        </p>
-        <div className="flex gap-4 pt-4">
-          <Link href="/projects">
-            <Button>View Projects</Button>
-          </Link>
-          <Link href="/contact">
-            <Button variant="outline">Get in Touch</Button>
+    <div>
+      <Hero />
+
+      {/* Services Overview */}
+      <section className="container py-20">
+        <div className="text-center mb-12 space-y-4">
+          <h2 className="text-3xl md:text-4xl font-bold">What I Do</h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Comprehensive digital solutions tailored to your needs
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
+          {featuredServices.map((service, idx) => (
+            <motion.div
+              key={service.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+            >
+              <ServiceCard {...service} />
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="text-center">
+          <Link href="/services">
+            <Button variant="outline" size="lg">
+              View All Services
+            </Button>
           </Link>
         </div>
-      </section>
-
-      {/* About Preview */}
-      <section className="space-y-4">
-        <h2 className="text-3xl font-bold">About Me</h2>
-        <p className="text-muted-foreground max-w-prose leading-7">
-          I&apos;m a developer who loves creating digital experiences. I focus on building scalable,
-          performant applications using modern technologies. When I&apos;m not coding, you can find
-          me exploring new technologies and contributing to open-source projects.
-        </p>
-        <Link href="/about">
-          <Button variant="ghost">Learn More →</Button>
-        </Link>
       </section>
 
       {/* Featured Projects */}
-      <section className="space-y-6">
-        <div className="flex items-center justify-between">
-          <h2 className="text-3xl font-bold">Featured Projects</h2>
-          <Link href="/projects">
-            <Button variant="ghost">View All →</Button>
-          </Link>
-        </div>
-        <div className="grid gap-6 sm:grid-cols-2">
-          {featuredProjects.map((project) => (
-            <Card key={project.title}>
-              <CardTitle>{project.title}</CardTitle>
-              <CardDescription>{project.description}</CardDescription>
-            </Card>
-          ))}
+      {featuredProjects.length > 0 && (
+        <section className="container py-20 bg-muted/30">
+          <div className="text-center mb-12 space-y-4">
+            <h2 className="text-3xl md:text-4xl font-bold">Featured Projects</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Showcasing recent work and capabilities
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {featuredProjects.map((project, idx) => (
+              <motion.div
+                key={project.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+              >
+                <Card>
+                  <div className="p-6 space-y-4">
+                    <CardTitle>{project.title}</CardTitle>
+                    <CardDescription>{project.description}</CardDescription>
+                    {project.url && (
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:underline text-sm"
+                      >
+                        View Project →
+                      </a>
+                    )}
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link href="/projects">
+              <Button variant="outline" size="lg">
+                View All Projects
+              </Button>
+            </Link>
+          </div>
+        </section>
+      )}
+
+      {/* CTA Section */}
+      <section className="container py-20">
+        <div className="max-w-3xl mx-auto text-center space-y-8 bg-primary/5 rounded-2xl p-12">
+          <h2 className="text-3xl md:text-4xl font-bold">Ready to Build Something Amazing?</h2>
+          <p className="text-xl text-muted-foreground">
+            Let&apos;s discuss your project and create a solution that exceeds your expectations.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/contact">
+              <Button size="lg" className="text-lg px-8 py-6">
+                Get Started
+              </Button>
+            </Link>
+            <Link href="/about">
+              <Button variant="outline" size="lg" className="text-lg px-8 py-6">
+                Learn More About Me
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
     </div>
