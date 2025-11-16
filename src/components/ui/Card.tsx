@@ -1,8 +1,13 @@
 import React from 'react';
+import { cn } from '../../lib/cn';
 
-export function Card({ children }: { children: React.ReactNode }) {
+export function Card({ children, className }: { children: React.ReactNode; className?: string }) {
   return (
-    <div className="rounded-lg border bg-card text-card-foreground shadow-card p-6">{children}</div>
+    <div
+      className={cn('rounded-lg border bg-card text-card-foreground shadow-card p-6', className)}
+    >
+      {children}
+    </div>
   );
 }
 
