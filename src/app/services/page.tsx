@@ -42,7 +42,7 @@ const services = [
     title: 'ComfyUI Workflows',
     description:
       'Create advanced ComfyUI workflows for image generation, processing, and automation. Build custom nodes, optimize pod runs, and develop production-ready image generation pipelines.',
-    tools: ['ComfyUI', 'Stable Diffusion', 'ControlNet', 'Custom Nodes', 'Python'],
+    tools: ['ComfyUI', 'Stable Diffusion', 'ControlNet', 'Custom Nodes', 'Python', 'AnimateDiff'],
     mockupType: 'workflow' as const,
     mockupAlt: 'ComfyUI Workflow Interface',
     mockupSrc: '/mockups/comfyui-workflow.svg',
@@ -52,7 +52,11 @@ const services = [
       'Image generation pipelines',
       'Batch processing',
       'Model integration',
+      'Photorealistic portraits',
+      'Anime character generation',
+      'Video/Animation workflows',
     ],
+    linkTo: '/services/comfyui',
   },
   {
     title: 'Web Design',

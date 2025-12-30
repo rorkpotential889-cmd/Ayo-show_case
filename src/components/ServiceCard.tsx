@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Card, CardDescription, CardTitle } from './ui/Card';
 import { TechBadge } from './TechBadge';
 import { MockupImage } from './MockupImage';
@@ -10,6 +11,7 @@ type ServiceCardProps = {
   mockupAlt?: string;
   mockupSrc?: string;
   features?: string[];
+  linkTo?: string;
 };
 
 export function ServiceCard({
@@ -20,11 +22,26 @@ export function ServiceCard({
   mockupAlt,
   mockupSrc,
   features,
+  linkTo,
 }: ServiceCardProps) {
-  return (
-    <Card className="overflow-hidden">
+  const content = (
+    <Card
+      className={`overflow-hidden ${linkTo ? 'hover:shadow-lg transition-shadow cursor-pointer' : ''}`}
+    >
       <div className="p-6 space-y-4">
-        <CardTitle>{title}</CardTitle>
+        <div className="flex items-center justify-between">
+          <CardTitle>{title}</CardTitle>
+          {linkTo && (
+            <svg
+              className="w-5 h-5 text-muted-foreground"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          )}
+        </div>
         <CardDescription>{description}</CardDescription>
 
         {mockupAlt && (
@@ -58,4 +75,14 @@ export function ServiceCard({
       </div>
     </Card>
   );
+
+  if (linkTo) {
+    return (
+      <Link href={linkTo} className="block">
+        {content}
+      </Link>
+    );
+  }
+
+  return content;
 }

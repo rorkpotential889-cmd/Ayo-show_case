@@ -64,6 +64,12 @@ export default function RootLayout({
                 Projects
               </Link>
               <Link
+                href="/testimonials"
+                className="hover:text-primary transition-colors underline-offset-4 hover:underline"
+              >
+                Testimonials
+              </Link>
+              <Link
                 href="/contact"
                 className="hover:text-primary transition-colors underline-offset-4 hover:underline"
               >
@@ -91,6 +97,9 @@ export default function RootLayout({
                 </Link>
                 <Link href="/projects" className="hover:text-foreground transition-colors">
                   Projects
+                </Link>
+                <Link href="/testimonials" className="hover:text-foreground transition-colors">
+                  Testimonials
                 </Link>
                 <Link href="/contact" className="hover:text-foreground transition-colors">
                   Contact
