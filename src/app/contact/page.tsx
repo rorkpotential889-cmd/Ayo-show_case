@@ -23,9 +23,7 @@ export default function ContactPage() {
     setSubmitStatus('idle');
 
     try {
-      // Option 1: Use Formspree (free tier available)
-      // Replace 'YOUR_FORMSPREE_ID' with your actual Formspree form ID
-      const response = await fetch('https://formspree.io/f/YOUR_FORMSPREE_ID', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -35,7 +33,6 @@ export default function ContactPage() {
           email: formData.email,
           subject: formData.subject,
           message: formData.message,
-          _replyto: formData.email,
         }),
       });
 
@@ -133,8 +130,9 @@ export default function ContactPage() {
                     <option value="ai-development">AI Development</option>
                     <option value="automation">Automation</option>
                     <option value="web-design">Web Design</option>
+                    <option value="mobile-app">Mobile App Development</option>
+                    <option value="bot-development">Bot Development</option>
                     <option value="comfyui">ComfyUI Workflows</option>
-                    <option value="music">Music Promotion</option>
                     <option value="other">Other</option>
                   </select>
                 </div>

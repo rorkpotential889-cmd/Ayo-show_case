@@ -7,8 +7,8 @@ const skills = [
   'AI Development',
   'Automation',
   'Web Design',
-  'ComfyUI',
   'Mobile Apps',
+  'Bot Development',
   'WordPress',
   'Zoho',
   'GoHighLevel',
@@ -19,7 +19,9 @@ const skills = [
   'TypeScript',
   'Next.js',
   'Python',
-  'Spotify API',
+  'React Native',
+  'Discord.js',
+  'OpenAI',
 ];
 
 const experience = [
@@ -67,7 +69,7 @@ export default function AboutPage() {
               I&apos;m a digital creator passionate about leveraging AI and modern tools to build
               solutions that make a difference. My journey started with web development and has
               evolved into a comprehensive skill set spanning AI development, automation, web
-              design, and music promotion.
+              design, mobile apps, and bot development.
             </p>
             <p>
               I specialize in using cutting-edge tools like Rork Lovable, Cursor, Glide,
@@ -76,9 +78,10 @@ export default function AboutPage() {
               Brevo to streamline business processes.
             </p>
             <p>
-              Beyond development, I create ComfyUI workflows for image generation, design responsive
-              websites with WordPress and no-code platforms, and curate Spotify playlists to promote
-              heavy rock, metal, and hip-hop artists.
+              I build responsive websites with WordPress and modern frameworks, develop
+              cross-platform mobile applications, create intelligent chatbots and automation bots,
+              and design ComfyUI workflows for image generation. Every project is crafted with
+              attention to detail and a focus on user experience.
             </p>
           </div>
         </motion.section>
@@ -111,9 +114,15 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="space-y-2">
-              <h3 className="font-semibold">ComfyUI Workflows</h3>
+              <h3 className="font-semibold">Mobile Applications</h3>
               <p className="text-sm text-muted-foreground">
-                Custom image generation pipelines and optimized workflows.
+                Cross-platform mobile apps with native performance and modern UX.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <h3 className="font-semibold">Bots & Automation</h3>
+              <p className="text-sm text-muted-foreground">
+                Intelligent chatbots and automation bots for various platforms.
               </p>
             </div>
           </div>

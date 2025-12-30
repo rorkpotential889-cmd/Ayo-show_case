@@ -49,10 +49,17 @@ export const projects: Project[] = [
     url: '#',
   },
   {
-    title: 'Spotify Playlist Curation Tool',
+    title: 'Discord Bot - AI Assistant',
     description:
-      'Automated playlist curation system for heavy rock and metal genres with analytics and growth tracking.',
-    tech: ['Spotify API', 'Node.js', 'MongoDB'],
+      'Intelligent Discord bot with AI-powered responses, moderation tools, and custom commands for community management.',
+    tech: ['Discord.js', 'OpenAI', 'Node.js', 'TypeScript'],
+    url: '#',
+  },
+  {
+    title: 'Mobile App - Task Manager',
+    description:
+      'Cross-platform task management mobile app with real-time sync, notifications, and offline support built with FlutterFlow.',
+    tech: ['FlutterFlow', 'Firebase', 'React Native'],
     url: '#',
   },
 ];
