@@ -18,11 +18,11 @@ export function Hero() {
           >
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
               <span className="bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent">
-                Voxxel
+                Ayo.dev
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
-              AI Development • Automation • Web Design • ComfyUI Workflows • Music Promotion
+              AI Development • Automation • Web Design • Mobile Apps • Bot Development
             </p>
             <p className="text-lg text-muted-foreground max-w-xl mx-auto">
               Building modern digital solutions with cutting-edge AI tools and no-code platforms.
