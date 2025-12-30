@@ -9,12 +9,12 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
-    default: 'Ayo.dev - AI Development & Digital Solutions',
-    template: '%s | Ayo.dev',
+    default: 'Ayodev - AI Development & Digital Solutions',
+    template: '%s | Ayodev',
   },
   description:
     'Professional AI development, automation, web design, mobile apps, and bot development services. Building modern digital solutions with cutting-edge technology.',
-  metadataBase: new URL('https://ayo.dev'),
+  metadataBase: new URL('https://ayodev.com'),
   keywords: [
     'AI development',
     'automation',
@@ -80,7 +80,7 @@ export default function RootLayout({
           <div className="container py-10">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <div className="text-sm text-muted-foreground">
-                © {new Date().getFullYear()} Ayo.dev. All rights reserved.
+                © {new Date().getFullYear()} Ayodev. All rights reserved.
               </div>
               <div className="flex gap-6 text-sm text-muted-foreground">
                 <Link href="/about" className="hover:text-foreground transition-colors">

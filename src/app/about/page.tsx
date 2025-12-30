@@ -50,7 +50,7 @@ export default function AboutPage() {
           transition={{ duration: 0.6 }}
           className="text-center space-y-4"
         >
-          <h1 className="text-4xl md:text-5xl font-bold">About Ayo.dev</h1>
+          <h1 className="text-4xl md:text-5xl font-bold">About Ayodev</h1>
           <p className="text-xl text-muted-foreground">
             Building the future of digital solutions with AI and automation
           </p>
