@@ -36,14 +36,16 @@ export default function ProjectsPage() {
             >
               <Card className="h-full flex flex-col overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
                 {/* Image Section */}
-                <div className="relative h-48 bg-muted overflow-hidden">
-                  <MockupImage
-                    src={project.image}
-                    alt={project.title}
-                    type={project.title.toLowerCase().includes('mobile') ? 'mobile' : 'desktop'}
-                    className="h-full"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="relative h-48 bg-muted overflow-hidden rounded-t-lg">
+                  <div className="absolute inset-0">
+                    <MockupImage
+                      src={project.image}
+                      alt={project.title}
+                      type={project.title.toLowerCase().includes('mobile') ? 'mobile' : 'desktop'}
+                      className="!h-full !w-full"
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
                 </div>
 
                 {/* Content Section */}

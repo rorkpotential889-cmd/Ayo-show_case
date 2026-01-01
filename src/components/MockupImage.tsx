@@ -21,7 +21,8 @@ const defaultImages: Record<string, string> = {
 
 export function MockupImage({ src, alt, type = 'desktop', className = '' }: MockupImageProps) {
   const [imageError, setImageError] = useState(false);
-  const imageSrc = src || defaultImages[type] || defaultImages.desktop;
+  const defaultMockup = defaultImages[type] || defaultImages.desktop;
+  const imageSrc = src || defaultMockup;
   const isSvg = imageSrc.endsWith('.svg');
   const containerClass = {
     mobile: 'w-48 mx-auto',
@@ -31,30 +32,11 @@ export function MockupImage({ src, alt, type = 'desktop', className = '' }: Mock
     playlist: 'w-64 mx-auto',
   }[type];
 
-  // If SVG file, display it directly
-  if (isSvg && !imageError) {
+  // If no src provided, or image error, or SVG - show default mockup
+  if (!src || imageError || isSvg) {
     return (
       <div className={`${containerClass} ${className}`}>
-        <div className="relative rounded-lg overflow-hidden border shadow-lg bg-muted h-full min-h-[200px]">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={imageSrc}
-            alt={alt}
-            className="w-full h-full object-contain p-4"
-            loading="lazy"
-            onError={() => setImageError(true)}
-          />
-        </div>
-      </div>
-    );
-  }
-
-  // If image failed or no src provided, show default mockup based on type
-  if (imageError || !src) {
-    const defaultMockup = defaultImages[type] || defaultImages.desktop;
-    return (
-      <div className={`${containerClass} ${className}`}>
-        <div className="relative rounded-lg overflow-hidden border shadow-lg bg-muted h-full min-h-[200px]">
+        <div className="relative rounded-lg overflow-hidden border shadow-lg bg-muted h-full min-h-[200px] w-full">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={defaultMockup}
@@ -67,19 +49,32 @@ export function MockupImage({ src, alt, type = 'desktop', className = '' }: Mock
     );
   }
 
-  // For non-SVG images, use Next.js Image
+  // For non-SVG images, try to load with fallback
   return (
     <div className={`${containerClass} ${className}`}>
-      <div className="relative rounded-lg overflow-hidden border shadow-lg bg-muted h-full min-h-[200px]">
+      <div className="relative rounded-lg overflow-hidden border shadow-lg bg-muted h-full min-h-[200px] w-full">
+        {/* Actual image */}
         <Image
           src={imageSrc}
           alt={alt}
           fill
-          className="object-cover"
+          className={`object-cover ${imageError ? 'hidden' : ''}`}
           loading="lazy"
           onError={() => setImageError(true)}
           unoptimized
         />
+        {/* Fallback mockup - shows if image fails */}
+        {imageError && (
+          <div className="absolute inset-0">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={defaultMockup}
+              alt={alt}
+              className="w-full h-full object-contain p-4"
+              loading="lazy"
+            />
+          </div>
+        )}
       </div>
     </div>
   );
