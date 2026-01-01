@@ -29,5 +29,24 @@ export const testimonials: Testimonial[] = [
     },
     highlights: ['Level of cooperation', 'Proactive communication', 'Quick responsiveness'],
   },
+  {
+    id: '2',
+    name: 'jgdev35',
+    username: 'jgdev35',
+    rating: 5,
+    message:
+      'Very good understanding of requirements, professional communication, and high-quality results.',
+    categories: {
+      communication: 5,
+      quality: 5,
+      value: 5,
+    },
+    highlights: [
+      'Understanding of requirements',
+      'Professional communication',
+      'High-quality results',
+    ],
+    date: 'Dec 17, 2025',
+  },
   // Add more testimonials here as you receive them
 ];
