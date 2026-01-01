@@ -115,9 +115,15 @@ export default function ServicesPage() {
   return (
     <div className="container py-20">
       <div className="max-w-4xl mx-auto text-center mb-16 space-y-4">
-        <h1 className="text-4xl md:text-5xl font-bold">Services</h1>
+        <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent">
+          Services
+        </h1>
         <p className="text-xl text-muted-foreground">
-          Comprehensive digital solutions for your business needs
+          What I offer - Professional digital solutions for your business
+        </p>
+        <p className="text-muted-foreground/80">
+          From websites to mobile apps, automation to AI solutions - everything you need to grow
+          your business
         </p>
       </div>
 
