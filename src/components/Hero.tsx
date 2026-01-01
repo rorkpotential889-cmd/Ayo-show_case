@@ -3,11 +3,14 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState } from 'react';
 import { Button } from './ui/Button';
 import { SocialLinks } from './SocialLinks';
 import { Card } from './ui/Card';
 
 export function Hero() {
+  const [imageError, setImageError] = useState(false);
+
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       <div className="container relative z-10 py-20">
@@ -72,60 +75,58 @@ export function Hero() {
             <Card className="p-4 lg:p-6 overflow-hidden border-2 shadow-xl bg-card">
               <div className="relative aspect-square lg:aspect-[4/3] rounded-lg overflow-hidden bg-gradient-to-br from-primary/10 to-primary/5">
                 {/* Professional Developer Image */}
-                <div className="relative w-full h-full">
-                  <Image
-                    src="/hero/developer.jpg"
-                    alt="Professional developer working on modern solutions"
-                    fill
-                    className="object-cover"
-                    onError={(e) => {
-                      // Hide image if not found, show fallback
-                      const target = e.currentTarget as HTMLImageElement;
-                      if (target.parentElement) {
-                        target.parentElement.style.display = 'none';
-                      }
-                    }}
-                    unoptimized
-                  />
-                </div>
+                {!imageError && (
+                  <div className="relative w-full h-full">
+                    <Image
+                      src="/hero/developer.jpg"
+                      alt="Professional developer working on modern solutions"
+                      fill
+                      className="object-cover"
+                      onError={() => setImageError(true)}
+                      unoptimized
+                    />
+                  </div>
+                )}
                 {/* Fallback - shows default mockup when image not found */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/10 to-muted/30 flex items-center justify-center">
-                  {/* Show default dashboard mockup as background */}
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="/mockups/ai-dashboard.svg"
-                    alt="Professional Developer"
-                    className="w-full h-full object-contain p-8 opacity-40"
-                  />
-                  {/* Overlay with developer icon */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center space-y-4 p-8 w-full h-full flex flex-col items-center justify-center bg-background/30 backdrop-blur-sm">
-                      <div className="w-24 h-24 mx-auto bg-primary/20 rounded-full flex items-center justify-center backdrop-blur-sm border-2 border-primary/30">
-                        <svg
-                          className="w-12 h-12 text-primary"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                          />
-                        </svg>
-                      </div>
-                      <div className="space-y-2">
-                        <p className="text-lg text-foreground font-semibold">
-                          Professional Developer
-                        </p>
-                        <p className="text-xs text-muted-foreground">
-                          Add your image to: public/hero/developer.jpg
-                        </p>
+                {imageError && (
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/10 to-muted/30 flex items-center justify-center">
+                    {/* Show default dashboard mockup as background */}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/mockups/ai-dashboard.svg"
+                      alt="Professional Developer"
+                      className="w-full h-full object-contain p-8 opacity-40"
+                    />
+                    {/* Overlay with developer icon */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="text-center space-y-4 p-8 w-full h-full flex flex-col items-center justify-center bg-background/30 backdrop-blur-sm">
+                        <div className="w-24 h-24 mx-auto bg-primary/20 rounded-full flex items-center justify-center backdrop-blur-sm border-2 border-primary/30">
+                          <svg
+                            className="w-12 h-12 text-primary"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                            />
+                          </svg>
+                        </div>
+                        <div className="space-y-2">
+                          <p className="text-lg text-foreground font-semibold">
+                            Professional Developer
+                          </p>
+                          <p className="text-xs text-muted-foreground">
+                            Add your image to: public/hero/developer.jpg
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
             </Card>
           </motion.div>
