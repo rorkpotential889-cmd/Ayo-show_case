@@ -80,38 +80,38 @@ export function Hero() {
                     className="object-cover"
                     onError={(e) => {
                       // Hide image if not found, show fallback
-                      e.currentTarget.style.display = 'none';
+                      const target = e.currentTarget as HTMLImageElement;
+                      if (target.parentElement) {
+                        target.parentElement.style.display = 'none';
+                      }
                     }}
                     unoptimized
                   />
                 </div>
                 {/* Fallback - shows if image not found */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/10 to-muted/30 flex items-center justify-center">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="/mockups/ai-dashboard.svg"
-                    alt="Professional Developer"
-                    className="w-full h-full object-contain p-8 opacity-60"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center space-y-3 p-6 z-10 bg-background/50 backdrop-blur-sm rounded-lg">
-                      <div className="w-20 h-20 mx-auto bg-primary/20 rounded-full flex items-center justify-center">
-                        <svg
-                          className="w-10 h-10 text-primary"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                          />
-                        </svg>
-                      </div>
-                      <p className="text-sm text-foreground/80 font-medium">
+                  <div className="text-center space-y-4 p-8 w-full h-full flex flex-col items-center justify-center">
+                    <div className="w-24 h-24 mx-auto bg-primary/20 rounded-full flex items-center justify-center backdrop-blur-sm border-2 border-primary/30">
+                      <svg
+                        className="w-12 h-12 text-primary"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                        />
+                      </svg>
+                    </div>
+                    <div className="space-y-2">
+                      <p className="text-lg text-foreground font-semibold">
                         Professional Developer
+                      </p>
+                      <p className="text-xs text-muted-foreground">
+                        Add your image to: public/hero/developer.jpg
                       </p>
                     </div>
                   </div>
