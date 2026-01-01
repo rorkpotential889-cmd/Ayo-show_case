@@ -22,7 +22,7 @@ const defaultImages: Record<string, string> = {
 export function MockupImage({ src, alt, type = 'desktop', className = '' }: MockupImageProps) {
   const [imageError, setImageError] = useState(false);
   const imageSrc = src || defaultImages[type] || defaultImages.desktop;
-  const isDefaultImage = !src || imageSrc.endsWith('.svg') || imageSrc === defaultImages[type];
+  const isSvg = imageSrc.endsWith('.svg');
   const containerClass = {
     mobile: 'w-48 mx-auto',
     desktop: 'w-full max-w-4xl mx-auto',
@@ -31,8 +31,26 @@ export function MockupImage({ src, alt, type = 'desktop', className = '' }: Mock
     playlist: 'w-64 mx-auto',
   }[type];
 
-  // If using default SVG or image failed, show placeholder
-  if (isDefaultImage || imageError) {
+  // If SVG file, display it directly
+  if (isSvg && !imageError) {
+    return (
+      <div className={`${containerClass} ${className}`}>
+        <div className="relative rounded-lg overflow-hidden border shadow-lg bg-muted h-full min-h-[200px]">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={imageSrc}
+            alt={alt}
+            className="w-full h-full object-contain p-4"
+            loading="lazy"
+            onError={() => setImageError(true)}
+          />
+        </div>
+      </div>
+    );
+  }
+
+  // If image failed or no src provided, show placeholder
+  if (imageError || !src) {
     return (
       <div className={`${containerClass} ${className}`}>
         <div className="relative rounded-lg overflow-hidden border shadow-lg bg-muted h-full min-h-[200px] flex items-center justify-center">
@@ -59,6 +77,7 @@ export function MockupImage({ src, alt, type = 'desktop', className = '' }: Mock
     );
   }
 
+  // For non-SVG images, use Next.js Image
   return (
     <div className={`${containerClass} ${className}`}>
       <div className="relative rounded-lg overflow-hidden border shadow-lg bg-muted h-full min-h-[200px]">

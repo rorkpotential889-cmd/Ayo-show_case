@@ -36,38 +36,15 @@ export default function ProjectsPage() {
             >
               <Card className="h-full flex flex-col overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
                 {/* Image Section */}
-                {project.image ? (
-                  <div className="relative h-48 bg-muted overflow-hidden">
-                    <MockupImage
-                      src={project.image}
-                      alt={project.title}
-                      type={project.title.toLowerCase().includes('mobile') ? 'mobile' : 'desktop'}
-                      className="h-full"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </div>
-                ) : (
-                  <div className="relative h-48 bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">
-                    <div className="text-center space-y-2">
-                      <div className="w-16 h-16 mx-auto bg-primary/20 rounded-lg flex items-center justify-center">
-                        <svg
-                          className="w-8 h-8 text-primary"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-                          />
-                        </svg>
-                      </div>
-                      <p className="text-xs text-muted-foreground">Project Image</p>
-                    </div>
-                  </div>
-                )}
+                <div className="relative h-48 bg-muted overflow-hidden">
+                  <MockupImage
+                    src={project.image}
+                    alt={project.title}
+                    type={project.title.toLowerCase().includes('mobile') ? 'mobile' : 'desktop'}
+                    className="h-full"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                </div>
 
                 {/* Content Section */}
                 <div className="p-6 flex-1 flex flex-col space-y-4">
