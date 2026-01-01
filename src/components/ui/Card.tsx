@@ -11,10 +11,22 @@ export function Card({ children, className }: { children: React.ReactNode; class
   );
 }
 
-export function CardTitle({ children }: { children: React.ReactNode }) {
-  return <h3 className="text-lg font-semibold mb-2">{children}</h3>;
+export function CardTitle({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return <h3 className={cn('text-lg font-semibold mb-2', className)}>{children}</h3>;
 }
 
-export function CardDescription({ children }: { children: React.ReactNode }) {
-  return <p className="text-sm text-muted-foreground">{children}</p>;
+export function CardDescription({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return <p className={cn('text-sm text-muted-foreground', className)}>{children}</p>;
 }
