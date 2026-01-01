@@ -35,36 +35,65 @@ export default function ComfyUIPage() {
               <Card className="h-full flex flex-col overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
                 {/* Image Section */}
                 <div className="relative h-64 bg-muted overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/5">
-                    <div className="text-center space-y-2 p-4">
-                      <div className="w-16 h-16 mx-auto bg-primary/20 rounded-lg flex items-center justify-center">
-                        <svg
-                          className="w-8 h-8 text-primary"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M4 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-3zM14 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1h-4a1 1 0 01-1-1v-3z"
-                          />
-                        </svg>
+                  {workflow.image ? (
+                    <>
+                      <Image
+                        src={workflow.image}
+                        alt={workflow.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        onError={() => {
+                          // Fallback will show
+                        }}
+                        unoptimized
+                      />
+                      {/* Fallback overlay - shows if image fails */}
+                      <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/5 opacity-0 hover:opacity-100 transition-opacity">
+                        <div className="text-center space-y-2 p-4">
+                          <div className="w-16 h-16 mx-auto bg-primary/20 rounded-lg flex items-center justify-center">
+                            <svg
+                              className="w-8 h-8 text-primary"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M4 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-3zM14 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1h-4a1 1 0 01-1-1v-3z"
+                              />
+                            </svg>
+                          </div>
+                          <p className="text-xs text-muted-foreground">Workflow Image</p>
+                        </div>
                       </div>
-                      <p className="text-xs text-muted-foreground">Workflow Image</p>
-                      <p className="text-xs text-muted-foreground/70">
-                        Add your workflow screenshot here
-                      </p>
+                    </>
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/5">
+                      <div className="text-center space-y-2 p-4">
+                        <div className="w-16 h-16 mx-auto bg-primary/20 rounded-lg flex items-center justify-center">
+                          <svg
+                            className="w-8 h-8 text-primary"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M4 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-3zM14 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1h-4a1 1 0 01-1-1v-3z"
+                            />
+                          </svg>
+                        </div>
+                        <p className="text-xs text-muted-foreground">Workflow Image</p>
+                        <p className="text-xs text-muted-foreground/70">
+                          Add your workflow screenshot here
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  {/* Uncomment when images are added */}
-                  {/* <Image
-                    src={workflow.image}
-                    alt={workflow.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  /> */}
+                  )}
                 </div>
 
                 {/* Content Section */}

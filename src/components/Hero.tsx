@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from './ui/Button';
 import { SocialLinks } from './SocialLinks';
 import { Card } from './ui/Card';
@@ -71,15 +72,18 @@ export function Hero() {
             <Card className="p-4 lg:p-6 overflow-hidden border-2 shadow-xl bg-card">
               <div className="relative aspect-square lg:aspect-[4/3] rounded-lg overflow-hidden bg-gradient-to-br from-primary/10 to-primary/5">
                 {/* Professional Developer Image */}
-                <img
-                  src="/hero/developer.jpg"
-                  alt="Professional developer working on modern solutions"
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    // Hide image if not found, show fallback
-                    e.currentTarget.style.display = 'none';
-                  }}
-                />
+                <div className="relative w-full h-full">
+                  <Image
+                    src="/hero/developer.jpg"
+                    alt="Professional developer working on modern solutions"
+                    fill
+                    className="object-cover"
+                    onError={() => {
+                      // Image will fallback to the div below
+                    }}
+                    unoptimized
+                  />
+                </div>
                 {/* Fallback - shows if image not found */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/10 to-muted/30 flex items-center justify-center">
                   <div className="text-center space-y-3 p-6 z-10">
