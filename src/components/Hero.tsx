@@ -88,31 +88,41 @@ export function Hero() {
                     unoptimized
                   />
                 </div>
-                {/* Fallback - shows if image not found */}
+                {/* Fallback - shows default mockup when image not found */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/10 to-muted/30 flex items-center justify-center">
-                  <div className="text-center space-y-4 p-8 w-full h-full flex flex-col items-center justify-center">
-                    <div className="w-24 h-24 mx-auto bg-primary/20 rounded-full flex items-center justify-center backdrop-blur-sm border-2 border-primary/30">
-                      <svg
-                        className="w-12 h-12 text-primary"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                        />
-                      </svg>
-                    </div>
-                    <div className="space-y-2">
-                      <p className="text-lg text-foreground font-semibold">
-                        Professional Developer
-                      </p>
-                      <p className="text-xs text-muted-foreground">
-                        Add your image to: public/hero/developer.jpg
-                      </p>
+                  {/* Show default dashboard mockup as background */}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/mockups/ai-dashboard.svg"
+                    alt="Professional Developer"
+                    className="w-full h-full object-contain p-8 opacity-40"
+                  />
+                  {/* Overlay with developer icon */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center space-y-4 p-8 w-full h-full flex flex-col items-center justify-center bg-background/30 backdrop-blur-sm">
+                      <div className="w-24 h-24 mx-auto bg-primary/20 rounded-full flex items-center justify-center backdrop-blur-sm border-2 border-primary/30">
+                        <svg
+                          className="w-12 h-12 text-primary"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                          />
+                        </svg>
+                      </div>
+                      <div className="space-y-2">
+                        <p className="text-lg text-foreground font-semibold">
+                          Professional Developer
+                        </p>
+                        <p className="text-xs text-muted-foreground">
+                          Add your image to: public/hero/developer.jpg
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
