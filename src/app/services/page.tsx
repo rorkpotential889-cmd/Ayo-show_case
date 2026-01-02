@@ -109,6 +109,31 @@ const services = [
       'Workflow automation',
     ],
   },
+  {
+    title: 'Consulting & Training',
+    description:
+      'Professional consulting services and personalized training programs. Learn how to code, use AI tools, edit images, create ComfyUI workflows, and leverage modern development platforms. Get expert guidance on your projects.',
+    tools: [
+      'Code Training',
+      'AI Tool Guidance',
+      'Image Editing',
+      'ComfyUI Workflows',
+      'Rampart',
+      'Project Consultation',
+    ],
+    mockupType: 'dashboard' as const,
+    mockupAlt: 'Consulting & Training',
+    mockupSrc: '/mockups/ai-dashboard.svg',
+    features: [
+      'One-on-one coding lessons',
+      'AI tool training',
+      'Image editing tutorials',
+      'ComfyUI workflow creation',
+      'Project consultation',
+      'Best practices guidance',
+      'Video tutorials (coming soon)',
+    ],
+  },
 ];
 
 export default function ServicesPage() {

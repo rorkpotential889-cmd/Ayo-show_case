@@ -134,6 +134,7 @@ export const projects: Project[] = [
     featured: false,
     category: 'ai',
     slug: 'ai-chat-application',
+    image: '/projects/ai/ai-chat-main.jpg',
     images: ['/projects/ai/ai-chat-1.jpg', '/projects/ai/ai-chat-2.jpg'],
   },
   {
@@ -145,6 +146,7 @@ export const projects: Project[] = [
     featured: false,
     category: 'automation',
     slug: 'zoho-automation-system',
+    image: '/projects/automation/zoho-main.jpg',
     images: ['/projects/automation/zoho-1.jpg', '/projects/automation/zoho-2.jpg'],
   },
   {
@@ -156,6 +158,7 @@ export const projects: Project[] = [
     featured: false,
     category: 'ai',
     slug: 'comfyui-workflow-generator',
+    image: '/projects/ai/comfyui-main.jpg',
     images: ['/projects/ai/comfyui-1.jpg', '/projects/ai/comfyui-2.jpg'],
   },
 ];

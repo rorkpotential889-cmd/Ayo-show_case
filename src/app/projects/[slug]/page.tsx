@@ -62,7 +62,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative w-full h-[500px] md:h-[600px] rounded-2xl overflow-hidden border shadow-2xl"
+            className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden border shadow-2xl bg-muted"
           >
             <Image
               src={project.image}
@@ -71,6 +71,11 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
               className="object-cover"
               priority
               unoptimized
+              onError={(e) => {
+                // Fallback to default mockup if image fails
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+              }}
             />
           </motion.div>
         )}
@@ -91,7 +96,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.5 + idx * 0.1 }}
-                  className="relative aspect-video rounded-lg overflow-hidden border shadow-lg hover:shadow-xl transition-shadow group"
+                  className="relative aspect-video rounded-lg overflow-hidden border shadow-lg hover:shadow-xl transition-shadow group bg-muted"
                 >
                   <Image
                     src={img}
@@ -99,6 +104,11 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                     unoptimized
+                    onError={(e) => {
+                      // Hide broken images
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                    }}
                   />
                 </motion.div>
               ))}
