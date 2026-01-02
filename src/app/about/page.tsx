@@ -2,6 +2,9 @@
 
 import { motion } from 'framer-motion';
 import { TechBadge } from '../../components/TechBadge';
+import type { Metadata } from 'next';
+
+// Note: Metadata is exported from layout.tsx for client components
 
 const skills = [
   'AI Development',

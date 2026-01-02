@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     template: '%s | Ayodev',
   },
   description:
-    'Professional AI development, automation, web design, mobile apps, and bot development services. Building modern digital solutions with cutting-edge technology.',
+    'Professional AI developer with 5+ years AI experience and 7+ years coding. Offering AI development, automation, web design, mobile apps, bot development, and consulting services. Expert in Rork Lovable, Cursor, ComfyUI, and modern development tools.',
   metadataBase: new URL('https://ayodev.com'),
   keywords: [
     'AI development',
@@ -24,7 +24,41 @@ export const metadata: Metadata = {
     'WordPress',
     'Zoho',
     'GoHighLevel',
+    'Rork Lovable',
+    'Cursor',
+    'bot development',
+    'consulting',
+    'coding training',
+    'image editing',
   ],
+  authors: [{ name: 'Ayodev' }],
+  creator: 'Ayodev',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://ayodev.com',
+    siteName: 'Ayodev',
+    title: 'Ayodev - AI Development & Digital Solutions',
+    description:
+      'Professional AI developer with 5+ years AI experience and 7+ years coding. Building modern digital solutions with cutting-edge technology.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ayodev - AI Development & Digital Solutions',
+    description:
+      'Professional AI developer offering development, automation, and consulting services.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({
